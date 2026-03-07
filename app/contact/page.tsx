@@ -24,6 +24,8 @@ export default function Contact() {
             <div className="space-y-6">
               <a
                 href={`mailto:${personalData.email}`}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center gap-4 p-4 bg-white dark:bg-white/5 rounded-2xl border border-neutral-200 dark:border-white/10 shadow-sm hover:bg-neutral-50 dark:hover:bg-white/10 transition-all group"
               >
                 <div className="p-3 bg-emerald-100 dark:bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 rounded-xl group-hover:scale-110 transition-transform">

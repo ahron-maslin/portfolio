@@ -115,6 +115,8 @@ export function Timeline() {
                   <a
                     key={role}
                     href={`mailto:${personalData.email}?subject=Opportunity for ${role}&body=Hi ${personalData.name.split(' ')[0]},%0D%0A%0D%0AWe are interested in discussing a ${role} position with you.`}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="px-3 py-1.5 bg-neutral-100 dark:bg-white/5 hover:bg-emerald-100 dark:hover:bg-emerald-500/20 hover:text-emerald-700 dark:hover:text-emerald-400 text-neutral-700 dark:text-slate-300 border border-neutral-200 dark:border-white/10 text-xs font-medium rounded-full transition-colors"
                   >
                     {role}
