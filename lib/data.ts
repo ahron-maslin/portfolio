@@ -242,7 +242,7 @@ export const timelineData = [
   {
     "year": "2026",
     "event": "Created online portfolio website with Agentic AI",
-    "url": null,
+    "url": "https://github.com/ahron-maslin/portfolio",
     "description": "Built this online portfolio leveraging modern AI-assisted development tools to bring the vision to life and showcase AI-driven engineering."
   }
 ];
