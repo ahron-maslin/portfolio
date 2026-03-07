@@ -30,7 +30,7 @@ const nextConfig: NextConfig = {
   },
   output: isStaticExport ? 'export' : 'standalone',
   trailingSlash: isStaticExport ? true : false,
-  assetPrefix: isStaticExport ? '.' : undefined,
+  //assetPrefix: isStaticExport ? '.' : undefined,
   transpilePackages: ['motion'],
   webpack: (config, {dev}) => {
     // HMR is disabled in AI Studio via DISABLE_HMR env var.
