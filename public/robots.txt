@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# 🚩 CTF Part 3: Good job. Bots might ignore this, but you didn't. 
+# Your next clue is intercepted in transit. Check the HTTP response headers of this web site!

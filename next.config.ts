@@ -38,7 +38,7 @@ const nextConfig: NextConfig = {
           { key: 'X-Content-Type-Options', value: 'nosniff' },
           { key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' },
           { key: 'Permissions-Policy', value: 'camera=(), microphone=(), geolocation=()' },
-          { key: 'X-CTF-Clue', value: 'Part 2 complete! Your next stop is the classic /humans.txt file.' }
+          { key: 'X-CTF-Clue', value: 'Part 4: Almost there! Decode this base64 string to find the final flag: L2h1bWFucy50eHQ=' }
         ],
       },
     ];

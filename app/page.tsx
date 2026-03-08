@@ -8,6 +8,8 @@ import Image from "next/image";
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen bg-neutral-50 dark:bg-slate-950 transition-colors duration-300">
+      {/* CTF Step 2 */}
+      <div style={{ display: 'none' }} aria-hidden="true" data-ctf="🚩 CTF Part 2: Nice find! The next clue is waiting in the file that tells web crawlers and bots where they aren't allowed to go."></div>
       <section className="min-h-[90vh] flex flex-col justify-center items-center text-center px-6 py-24 relative overflow-hidden">
         {/* Cool background effects */}
         <div className="absolute inset-0 z-0">

@@ -34,7 +34,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <Footer />
         </ThemeProvider>
         <Script id="ctf-logger" strategy="afterInteractive">
-          {`console.log('%c🚩 CTF Part 1: You found me! The next clue is hidden in the HTTP response headers of this site.', 'color: #10b981; font-size: 16px; font-weight: bold; border: 1px solid #10b981; padding: 10px; border-radius: 5px;');`}
+          {`console.log('%c🚩 CTF Part 1: You found me! Your next clue is hidden somewhere in the DOM elements of the homepage. Keep your eyes peeled for hidden attributes.', 'color: #10b981; font-size: 16px; font-weight: bold; border: 1px solid #10b981; padding: 10px; border-radius: 5px;');`}
         </Script>
       </body>
     </html>

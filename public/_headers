@@ -4,4 +4,4 @@
   Referrer-Policy: strict-origin-when-cross-origin
   Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
   Permissions-Policy: camera=(), microphone=(), geolocation=()
-  X-CTF-Clue: "Part 2 complete! Your next stop is the classic /humans.txt file."
+  X-CTF-Clue: "Part 4: Almost there! Decode this base64 string to find the final flag: L2h1bWFucy50eHQ="
