@@ -1,0 +1,10 @@
+# humanstxt.org/
+
+/* TEAM */
+  Aharon Maslin - Developer
+
+/* THANKS */
+  Thanks for playing the CTF!
+
+Here is your final flag:
+flag{dev_tools_master_1337}

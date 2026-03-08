@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Inter, JetBrains_Mono } from 'next/font/google';
+import Script from 'next/script';
 import './globals.css'; // Global styles
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
@@ -32,6 +33,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </main>
           <Footer />
         </ThemeProvider>
+        <Script id="ctf-logger" strategy="afterInteractive">
+          {`console.log('%c🚩 CTF Part 1: You found me! The next clue is hidden in the HTTP response headers of this site.', 'color: #10b981; font-size: 16px; font-weight: bold; border: 1px solid #10b981; padding: 10px; border-radius: 5px;');`}
+        </Script>
       </body>
     </html>
   );
