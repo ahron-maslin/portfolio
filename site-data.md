@@ -27,7 +27,7 @@ components:
       - click: open URL or trigger email draft
       - scroll_animation: smooth horizontal parallax
       - career_split:
-          options: ["Sysadmin", "Software Developer", "DevOps", "Pentester", "AI"]
+          options: ["Sysadmin", "Network Administrator", "Software Developer", "DevOps", "Pentester", "AI"]
           action: send email draft to site owner
     instructions_for_agent:
       - Parse `resume.pdf` to extract:

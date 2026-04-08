@@ -250,6 +250,7 @@ export const timelineData = [
 export const rolesData = [
   "Sysadmin",
   "Software Developer",
+  "Network Administrator",
   "DevOps",
   "Pentester",
   "AI"
