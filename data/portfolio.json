@@ -215,6 +215,12 @@
       "event": "Created online portfolio website with Agentic AI",
       "url": "https://github.com/ahron-maslin/portfolio",
       "description": "Built this online portfolio leveraging modern AI-assisted development tools to bring the vision to life and showcase AI-driven engineering."
+    },
+    {
+      "year": "2026",
+      "event": "Interactive dotfile generator and project configuration manager.",
+      "url": "https://github.com/ahron-maslin/dotmaster",
+      "description": "Answer a few questions, get a fully configured project — .gitignore, linting, formatting, testing, Docker, CI, and more, all in one place."
     }
   ],
   "roles": [
