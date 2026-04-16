@@ -7,7 +7,7 @@
     "dev": "next dev",
     "prebuild": "node scripts/build-data.js",
     "build": "next build",
-    "build:static": "STATIC_EXPORT=true next build",
+    "build:static": "node scripts/build-data.js && STATIC_EXPORT=true next build",
     "start": "next start",
     "lint": "eslint .",
     "clean": "next clean",
