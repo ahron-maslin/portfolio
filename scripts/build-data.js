@@ -38,8 +38,6 @@ export const skillsData = ${JSON.stringify(data.skills, null, 2)}.map(skill => (
 
 export const timelineData = ${JSON.stringify(data.timeline, null, 2)};
 
-export const projectsData = ${JSON.stringify(data.projects || [], null, 2)};
-
 export const rolesData = ${JSON.stringify(data.roles, null, 2)};
 `;
 
