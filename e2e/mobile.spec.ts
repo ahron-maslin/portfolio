@@ -11,8 +11,8 @@ test.describe('Mobile Layout UX', () => {
     // Target the navigation bar
     const nav = page.locator('nav');
     
-    // The "Aharon Maslin" span inside the Navbar link should have the class `hidden` on mobile
-    const nameSpan = nav.locator('span', { hasText: 'Aharon Maslin' });
+    // The "Ahron Maslin" span inside the Navbar link should have the class `hidden` on mobile
+    const nameSpan = nav.locator('span', { hasText: 'Ahron Maslin' });
     
     // Wait for the element to attach
     await nameSpan.waitFor({ state: 'attached' });

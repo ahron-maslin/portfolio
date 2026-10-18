@@ -4,7 +4,7 @@
 import { LucideIcon, Code2, Server, Cpu, Box, Network, Settings, Terminal, Shield, Bot, Brain, Users, FileText, Clock, Lightbulb, Wrench } from "lucide-react";
 
 export const personalData = {
-  "name": "Aharon Maslin",
+  "name": "Ahron Maslin",
   "headline": "Software Developer, Sysadmin, DevOps Engineer, and Pentester. Building robust systems from the ground up.",
   "email": "aronmaslin@gmail.com",
   "linkedin": "https://linkedin.com/in/ahron-maslin",
@@ -216,28 +216,28 @@ export const timelineData = [
     "description": "Created a bootstrapping script to automate the setup and configuration of Ubuntu environments, saving hours of manual work."
   },
   {
-    "year": "2022",
-    "event": "Data Structures & Algorithms in C",
-    "url": "https://github.com/ahron-maslin/datastructures-and-algorithms",
-    "description": "Implemented core data structures and algorithms from scratch in C, focusing heavily on performance and optimization."
-  },
-  {
     "year": "2021-2022",
     "event": "Lido App",
     "url": "https://lido.app",
     "description": "Contributed to the development of Lido App, helping build a modern and powerful spreadsheet platform."
   },
   {
-    "year": "2023",
-    "event": "Dippity K SPA",
-    "url": "https://github.com/ahron-maslin/dippityk-spa",
-    "description": "Built a single-page application from scratch, using it as a playground to showcase and refine advanced frontend architecture techniques."
+    "year": "2022",
+    "event": "Data Structures & Algorithms in C",
+    "url": "https://github.com/ahron-maslin/datastructures-and-algorithms",
+    "description": "Implemented core data structures and algorithms from scratch in C, focusing heavily on performance and optimization."
   },
   {
     "year": "2022-2026",
     "event": "Focused on learning",
     "url": null,
     "description": "Focused heavily on continuous learning—exploring new technologies, reading up on best practices, and refining the existing skill set."
+  },
+  {
+    "year": "2023",
+    "event": "Dippity K SPA",
+    "url": "https://github.com/ahron-maslin/dippityk-spa",
+    "description": "Built a single-page application from scratch, using it as a playground to showcase and refine advanced frontend architecture techniques."
   },
   {
     "year": "2026",

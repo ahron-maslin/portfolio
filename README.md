@@ -1,4 +1,4 @@
-# Aharon Maslin - Personal Portfolio
+# Ahron Maslin - Personal Portfolio
 
 A modern, responsive, and fully static personal portfolio website built with Next.js, Tailwind CSS, and Framer Motion. This project is designed to be lightweight, fast, and easily deployable to static hosting platforms like Cloudflare Pages.
 

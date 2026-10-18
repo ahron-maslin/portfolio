@@ -1,7 +1,7 @@
 # Portfolio Website Specification (AI-Ready with Resume Integration)
 
 ## Metadata
-- author: Aharon Maslin
+- author: Ahron Maslin
 - website_type: Portfolio / Resume
 - built_with: Antigravity Agent + Claude
 - deployment: Firebase (CI/CD via GitHub Actions)

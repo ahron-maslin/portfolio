@@ -1,6 +1,9 @@
+import type { Metadata } from "next";
 import { ContactForm } from "@/components/ContactForm";
 import { Github, Linkedin, Mail, FileDown } from "lucide-react";
 import { personalData } from "@/lib/data";
+
+export const metadata: Metadata = { title: "Contact" };
 
 export default function Contact() {
   return (

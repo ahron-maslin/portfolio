@@ -3,6 +3,8 @@
 import { useState } from "react";
 import { Send } from "lucide-react";
 
+const FORMSPREE_ID = process.env.NEXT_PUBLIC_FORMSPREE_ID || "xlgprzka";
+
 export function ContactForm() {
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
 
@@ -10,7 +12,11 @@ export function ContactForm() {
     e.preventDefault();
     setStatus("submitting");
     
-    const form = e.target as HTMLFormElement;
+    const form = e.currentTarget;
+    if ((form.elements.namedItem("_gotcha") as HTMLInputElement | null)?.value) {
+      setStatus("success");
+      return;
+    }
     const data = {
       name: (form.elements.namedItem("name") as HTMLInputElement).value,
       email: (form.elements.namedItem("email") as HTMLInputElement).value,
@@ -18,7 +24,7 @@ export function ContactForm() {
     };
 
     try {
-      const response = await fetch("https://formspree.io/f/xlgprzka", {
+      const response = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
         method: "POST",
         body: JSON.stringify(data),
         headers: {
@@ -33,7 +39,7 @@ export function ContactForm() {
       } else {
         setStatus("error");
       }
-    } catch (error) {
+    } catch {
       setStatus("error");
     }
   };
@@ -82,6 +88,8 @@ export function ContactForm() {
         />
       </div>
       
+      <input type="text" name="_gotcha" tabIndex={-1} autoComplete="off" aria-hidden="true" className="hidden" />
+
       <button
         type="submit"
         disabled={status === "submitting" || status === "success"}
@@ -100,6 +108,10 @@ export function ContactForm() {
           </>
         )}
       </button>
+      <p role="status" aria-live="polite" className="sr-only">
+        {status === "success" && "Your message was sent."}
+        {status === "error" && "Your message could not be sent. Please try again."}
+      </p>
     </form>
   );
 }

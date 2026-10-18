@@ -6,10 +6,10 @@ test.describe('Navigation flows', () => {
     await page.goto('/');
 
     // Verify Title
-    await expect(page).toHaveTitle(/Aharon Maslin \| Portfolio/);
+    await expect(page).toHaveTitle(/Ahron Maslin \| Portfolio/);
 
     // Verify the central Hero element
-    await expect(page.locator('h1').getByText(/Aharon Maslin/)).toBeVisible();
+    await expect(page.locator('h1').getByText(/Ahron Maslin/)).toBeVisible();
 
     // 2. Click About navigation link (which scrolls to #about)
     await page.getByRole('navigation').getByRole('link', { name: 'About' }).click();

@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, useState, useEffect } from "react";
-import { motion, useScroll, useTransform } from "motion/react";
+import { motion, useScroll, useTransform, useReducedMotion } from "motion/react";
 import { ExternalLink, FileDown } from "lucide-react";
 import { timelineData, rolesData, personalData } from "@/lib/data";
 
@@ -9,6 +9,7 @@ export function Timeline() {
   const targetRef = useRef<HTMLDivElement>(null);
   const carouselRef = useRef<HTMLDivElement>(null);
   const [scrollRange, setScrollRange] = useState(0);
+  const reduceMotion = useReducedMotion();
   const [expandedCard, setExpandedCard] = useState<number | null>(null);
 
   useEffect(() => {
@@ -22,7 +23,12 @@ export function Timeline() {
 
     updateMeasurements();
     window.addEventListener("resize", updateMeasurements);
-    return () => window.removeEventListener("resize", updateMeasurements);
+    const observer = new ResizeObserver(updateMeasurements);
+    if (carouselRef.current) observer.observe(carouselRef.current);
+    return () => {
+      window.removeEventListener("resize", updateMeasurements);
+      observer.disconnect();
+    };
   }, []);
 
   // Dismiss expanded card when tapping outside
@@ -47,6 +53,7 @@ export function Timeline() {
 
   return (
     <section ref={targetRef} className="relative h-[300vh] bg-neutral-50 dark:bg-slate-950 transition-colors duration-300">
+      <h2 className="sr-only">Timeline</h2>
       <div className="sticky top-0 flex h-svh items-center overflow-hidden">
         <motion.div
           ref={carouselRef}
@@ -55,7 +62,7 @@ export function Timeline() {
         >
 
           {/* Wavy Line Background */}
-          <div className="absolute left-0 right-0 h-2 top-1/2 -translate-y-1/2 z-0 opacity-40">
+          <div aria-hidden="true" className="absolute left-0 right-0 h-2 top-1/2 -translate-y-1/2 z-0 opacity-40">
             <svg width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 1000 20">
               <defs>
                 <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -74,10 +81,10 @@ export function Timeline() {
             return (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 40 }}
+                initial={reduceMotion ? false : { opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
+                transition={{ duration: reduceMotion ? 0 : 0.6, delay: reduceMotion ? 0 : 0.1, ease: "easeOut" }}
                 className="relative z-10 flex flex-col items-center w-[75vw] max-w-xs lg:w-64 shrink-0 group cursor-pointer rounded-2xl focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-emerald-500"
                 role="button"
                 tabIndex={0}

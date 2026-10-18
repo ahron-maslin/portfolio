@@ -1,7 +1,7 @@
 # humanstxt.org/
 
 /* TEAM */
-  Aharon Maslin - Developer
+  Ahron Maslin - Developer
 
 /* THANKS */
   Thanks for playing the CTF!
