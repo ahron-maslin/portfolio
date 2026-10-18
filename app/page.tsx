@@ -1,5 +1,6 @@
 import { Timeline } from "@/components/Timeline";
 import { Skills } from "@/components/Skills";
+import { Projects } from "@/components/Projects";
 import { ArrowRight, FileDown, Terminal } from "lucide-react";
 import { personalData, aboutData } from "@/lib/data";
 import Link from "next/link";
@@ -102,6 +103,8 @@ export default function Home() {
       <div id="timeline">
         <Timeline />
       </div>
+
+      <Projects />
     </div>
   );
 }

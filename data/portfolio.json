@@ -254,5 +254,72 @@
     "DevOps",
     "Pentester",
     "AI"
+  ],
+  "projects": [
+    {
+      "title": "Transpiler",
+      "description": "Multi-language transpiler: parses C, Go, Java, JavaScript, Rust and Python into a language-agnostic IR, then generates code in any of the six targets.",
+      "tags": [
+        "Python",
+        "tree-sitter",
+        "Compilers"
+      ],
+      "url": "https://github.com/ahron-maslin/transpiler",
+      "linkLabel": "GitHub"
+    },
+    {
+      "title": "EchoVector",
+      "description": "Semantic search over audio by embedding the waveform itself, so you can find moments from a plain-language description with no transcription.",
+      "tags": [
+        "Python",
+        "Embeddings",
+        "Vector search"
+      ],
+      "url": "https://github.com/ahron-maslin/echo_vector",
+      "linkLabel": "GitHub"
+    },
+    {
+      "title": "Basari",
+      "description": "Meat and dairy halachic wait-timer, built as an iOS app with a web version.",
+      "tags": [
+        "iOS",
+        "Swift",
+        "Cloudflare Pages"
+      ],
+      "url": "https://basari.pages.dev",
+      "linkLabel": "Live site"
+    },
+    {
+      "title": "Browser Context Copier",
+      "description": "Chrome/Firefox extension that copies a page's readable content as clean Markdown for pasting into an LLM. Fully local, no network calls.",
+      "tags": [
+        "TypeScript",
+        "Browser extension",
+        "Markdown"
+      ],
+      "url": "https://github.com/ahron-maslin/browser-context-copier",
+      "linkLabel": "GitHub"
+    },
+    {
+      "title": "dotmaster",
+      "description": "Interactive dotfile generator and project configuration manager: answer a few questions, get a configured project with linting, formatting, testing, Docker and CI.",
+      "tags": [
+        "CLI",
+        "DevOps",
+        "Tooling"
+      ],
+      "url": "https://github.com/ahron-maslin/dotmaster",
+      "linkLabel": "GitHub"
+    },
+    {
+      "title": "Dippity K SPA",
+      "description": "Single-page application built from scratch as a playground for advanced frontend architecture techniques.",
+      "tags": [
+        "Frontend",
+        "SPA"
+      ],
+      "url": "https://github.com/ahron-maslin/dippityk-spa",
+      "linkLabel": "GitHub"
+    }
   ]
 }
