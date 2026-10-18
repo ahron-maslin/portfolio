@@ -2,7 +2,7 @@
 
 import { useRef, useState, useEffect } from "react";
 import { motion, useScroll, useTransform } from "motion/react";
-import { ExternalLink, Mail, FileDown } from "lucide-react";
+import { ExternalLink, FileDown } from "lucide-react";
 import { timelineData, rolesData, personalData } from "@/lib/data";
 
 export function Timeline() {
@@ -28,8 +28,15 @@ export function Timeline() {
   // Dismiss expanded card when tapping outside
   useEffect(() => {
     const handleClickOutside = () => setExpandedCard(null);
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setExpandedCard(null);
+    };
     document.addEventListener('click', handleClickOutside);
-    return () => document.removeEventListener('click', handleClickOutside);
+    document.addEventListener('keydown', handleEscape);
+    return () => {
+      document.removeEventListener('click', handleClickOutside);
+      document.removeEventListener('keydown', handleEscape);
+    };
   }, []);
 
   const { scrollYProgress } = useScroll({
@@ -71,9 +78,20 @@ export function Timeline() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
-                className="relative z-10 flex flex-col items-center w-[75vw] max-w-xs lg:w-64 shrink-0 group cursor-pointer"
+                className="relative z-10 flex flex-col items-center w-[75vw] max-w-xs lg:w-64 shrink-0 group cursor-pointer rounded-2xl focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-emerald-500"
+                role="button"
+                tabIndex={0}
+                aria-expanded={isExpanded}
+                onFocus={() => setExpandedCard(index)}
+                onKeyDown={(e) => {
+                  if (e.target !== e.currentTarget) return;
+                  if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault();
+                    setExpandedCard(isExpanded ? null : index);
+                  }
+                }}
                 onClick={(e) => {
-                  setExpandedCard(isExpanded ? null : index);
+                  setExpandedCard(index);
                   e.stopPropagation();
                 }}
               >
@@ -131,9 +149,7 @@ export function Timeline() {
                 {rolesData.map((role) => (
                   <a
                     key={role}
-                    href={`mailto:${personalData.email}?subject=Opportunity for ${role}&body=Hi ${personalData.name.split(' ')[0]},%0D%0A%0D%0AWe are interested in discussing a ${role} position with you.`}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    href={`mailto:${personalData.email}?subject=${encodeURIComponent(`Opportunity for ${role}`)}&body=${encodeURIComponent(`Hi ${personalData.name.split(' ')[0]},\r\n\r\nWe are interested in discussing a ${role} position with you.`)}`}
                     className="px-2.5 py-1 lg:px-3 lg:py-1.5 bg-neutral-100 dark:bg-white/5 hover:bg-emerald-100 dark:hover:bg-emerald-500/20 hover:text-emerald-700 dark:hover:text-emerald-400 text-neutral-700 dark:text-slate-300 border border-neutral-200 dark:border-white/10 text-[10px] lg:text-xs font-medium rounded-full transition-colors"
                   >
                     {role}
