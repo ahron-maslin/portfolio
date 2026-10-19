@@ -15,7 +15,7 @@ export function Skills() {
             </div>
             <div>
               <h3 className="font-semibold text-neutral-900 dark:text-slate-200 transition-colors">{skill.name}</h3>
-              <p className="text-xs text-neutral-500 dark:text-slate-500 transition-colors">{skill.category}</p>
+              <p className="text-xs text-neutral-500 dark:text-slate-400 transition-colors">{skill.category}</p>
             </div>
           </div>
         );

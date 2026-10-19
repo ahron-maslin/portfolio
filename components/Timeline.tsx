@@ -86,9 +86,9 @@ export function Timeline() {
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: reduceMotion ? 0 : 0.6, delay: reduceMotion ? 0 : 0.1, ease: "easeOut" }}
                 className="relative z-10 flex flex-col items-center w-[75vw] max-w-xs lg:w-64 shrink-0 group cursor-pointer rounded-2xl focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-emerald-500"
-                role="button"
+                role="group"
+                aria-label={`${item.year}: ${item.event}`}
                 tabIndex={0}
-                aria-expanded={isExpanded}
                 onFocus={() => setExpandedCard(index)}
                 onKeyDown={(e) => {
                   if (e.target !== e.currentTarget) return;
@@ -102,7 +102,7 @@ export function Timeline() {
                   e.stopPropagation();
                 }}
               >
-                <div className={`mb-4 text-sm font-bold font-mono tracking-wider transition-colors duration-300 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 ${isExpanded ? "text-emerald-600 dark:text-emerald-400" : "text-neutral-500 dark:text-slate-500"}`}>
+                <div className={`mb-4 text-sm font-bold font-mono tracking-wider transition-colors duration-300 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 ${isExpanded ? "text-emerald-600 dark:text-emerald-400" : "text-neutral-500 dark:text-slate-400"}`}>
                   {item.year}
                 </div>
 
